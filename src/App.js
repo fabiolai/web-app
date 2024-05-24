@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Modal from './Modal';
+import './App.css';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
