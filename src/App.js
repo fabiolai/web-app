@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Modal from './Modal';
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Router>
     <div>
@@ -20,6 +22,12 @@ function App() {
           </li>
         </ul>
       </nav>
+      <button onClick={() => setIsModalOpen(true)}> Modal</button>
+
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <h2> Title </h2>
+          <p> content </p>
+        </Modal>
 
       <Routes>
         <Route path="/" exact component={Home} />
